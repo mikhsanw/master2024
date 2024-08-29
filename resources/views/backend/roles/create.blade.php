@@ -1,6 +1,5 @@
-@extends('layouts.backend._default')
+<x-app-layout>
 
-@section('content')
 
 <div class="row justify-content-center">
     <div class="col-md-8">
@@ -56,4 +55,5 @@
     </div>    
 </div>
     
-@endsection
+
+</x-app-layout>

@@ -1,6 +1,5 @@
-@extends('layouts.backend._default')
+<x-app-layout>
 
-@section('content')
     <div class="card border-transparent" data-bs-theme="light" style="background-color: #1C325E;">
         <!--begin::Body-->
         @if (session('status'))
@@ -24,4 +23,5 @@
         </div>
         <!--end::Body-->
     </div>
-@endsection
+
+</x-app-layout>

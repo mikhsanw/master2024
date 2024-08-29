@@ -1,6 +1,4 @@
-@extends('layouts.auth.app')
-
-@section('content')
+<x-auth-layout>
 <!--begin::Root-->
 <div class="d-flex flex-column flex-root" id="kt_app_root">
     <!--begin::Page bg image-->
@@ -188,4 +186,4 @@
     <!--end::Authentication - Sign-in-->
 </div>
 <!--end::Root-->
-@endsection
+</x-auth-layout>

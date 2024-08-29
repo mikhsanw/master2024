@@ -1,6 +1,8 @@
-@extends('layouts.backend._default')
-@push('title', $page->title ?? 'Berita')
-@section('content')
+<x-app-layout>
+    <x-slot name="title">
+        {{ __($page->title) }}
+    </x-slot>
+    
 <div class="card">
     <div class="card-header border-0 pt-6">
         <div class="card-title">
@@ -72,14 +74,16 @@
 
     </div>
 </div>
-@endsection
-@push('css')
-<link href="{{ url('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
-@endpush
-@push('js')
-<script src="{{ url('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
-<script src="{{ url('js/'.$backend.'/'.$page->code.'/datatable.js') }}"></script>
-<script src="{{ url('js/jquery-validation-1.19.5/lib/jquery.form.js') }}"></script>
-<script src="{{ url('js/jquery-crud.js') }}"></script>
-<script src="{{ url('assets/plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
-@endpush
+
+@prepend('css')
+<link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+@endprepend
+@prepend('js')
+<script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+<script src="{{ asset('js/'.$backend.'/'.$page->code.'/datatable.js') }}"></script>
+<script src="{{ asset('js/jquery-validation-1.19.5/lib/jquery.form.js') }}"></script>
+<script src="{{ asset('js/jquery-crud.js') }}"></script>
+<script src="{{ asset('assets/plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
+@endprepend
+
+</x-app-layout>

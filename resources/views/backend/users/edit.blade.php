@@ -1,6 +1,5 @@
-@extends('layouts.backend._default')
+<x-app-layout>
 
-@section('content')
 <div id="kt_app_content" class="app-content flex-column-fluid">
     <div id="kt_app_content_container" class="app-container container-xxl">
         <div class="card card-flush py-4">
@@ -74,7 +73,8 @@
         </div>
     </div>
 </div>    
-@endsection
+
+</x-app-layout>
 @push('js')
     <script src="{{ url('js/jquery-validation-1.19.5/lib/jquery.form.js') }}"></script>
     <script src="{{ url('js/jquery-crud.js') }}"></script>

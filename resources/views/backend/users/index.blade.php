@@ -1,6 +1,7 @@
-@extends('layouts.backend._default')
-@push('title',$page->title)
-@section('content')
+<x-app-layout>
+    <x-slot name="title">
+        {{ __($page->title) }}
+    </x-slot>
         <div class="card">
             <div class="card-header border-0 pt-6">
                 <div class="card-title">
@@ -70,12 +71,13 @@
         </div>
 
     
-@endsection
-@push('css')
-<link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"/>
-@endpush
-@push('js')
-    <script src="{{ url('js/'.$backend.'/'.$page->code.'/datatable.js') }}"></script>
-    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
-    <script src="js/jquery-crud.js"></script>
-@endpush
+
+        @prepend('css')
+        <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css"/>
+        @endprepend
+        @prepend('js')
+            <script src="{{ url('js/'.$backend.'/'.$page->code.'/datatable.js') }}"></script>
+            <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+            <script src="js/jquery-crud.js"></script>
+        @endprepend
+</x-app-layout>

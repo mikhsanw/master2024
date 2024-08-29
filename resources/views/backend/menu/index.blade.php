@@ -1,6 +1,7 @@
-@extends('layouts.backend._default')
-@push('title', $page->title)
-@section('content')
+<x-app-layout>
+    <x-slot name="title">
+        {{ __($page->title) }}
+    </x-slot>
 <div class="card">
     <div class="card-header border-0 pt-6">
         <div class="card-title">
@@ -64,8 +65,8 @@
         </div>
     </div>
 </div>
-@endsection
-@push('css')
+
+@prepend('css')
 <!-- <link rel="stylesheet" href="{{ url('/assets/vendor/nestable2/jquery.nestable.css') }}" /> -->
 <style type="text/css">
 
@@ -203,8 +204,8 @@ p { line-height: 1.5em; }
 .socialite { display: block; float: left; height: 35px; }
 
     </style>
-@endpush
-@push('js')
+@endprepend
+@prepend('js')
     <script src="{{ url('/assets/vendor/nestable-/jquery.nestable.js') }}"></script>
     <script src="{{ url('js/jquery-validation-1.19.5/lib/jquery.form.js') }}"></script>
     <script src="{{ url('js/'.$backend.'/'.$page->code.'/datatable.js') }}"></script>
@@ -217,4 +218,5 @@ p { line-height: 1.5em; }
             $("#code").val(value.toLowerCase());
         });
     </script>
-@endpush
+@endprepend
+</x-app-layout>

@@ -1,6 +1,5 @@
-@extends('layouts.auth.app')
+<x-auth-layout>
 
-@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -74,4 +73,5 @@
         </div>
     </div>
 </div>
-@endsection
+
+</x-auth-layout>

@@ -47,4 +47,5 @@
     <!--end::Card body-->
 </div>
 <!--end::Card-->
-@endsection
+
+</x-app-layout>

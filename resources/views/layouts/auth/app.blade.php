@@ -60,7 +60,7 @@ License: For each use you must have a valid license purchased only from above li
 		}
 		</script>
 
-		@yield('content')
+		{{ $slot }}
 		
 		<script>var hostUrl = "assets/";</script>
 		<script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>

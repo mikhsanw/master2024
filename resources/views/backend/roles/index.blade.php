@@ -1,6 +1,5 @@
-@extends('layouts.backend._default')
+<x-app-layout>
 
-@section('content')
         <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5 g-xl-9">
         @foreach($roles as $role)
             <!--begin::Col-->
@@ -100,4 +99,5 @@
         @endcan
 
         </div>
-@endsection
+
+</x-app-layout>

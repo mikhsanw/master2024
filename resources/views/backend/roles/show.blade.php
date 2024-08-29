@@ -1,6 +1,5 @@
-@extends('layouts.backend._default')
+<x-app-layout>
 
-@section('content')
 <div class="mb-3 row">
     <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Name:</strong></label>
     <div class="col-md-6" style="line-height: 35px;">
@@ -21,4 +20,5 @@
         @endif
     </div>
 </div>
-@endsection
+
+</x-app-layout>

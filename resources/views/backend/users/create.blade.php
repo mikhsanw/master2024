@@ -67,7 +67,8 @@
         </div>
     </div>
 </div>
-@endsection
+
+</x-app-layout>
 @push('js')
 <script src="{{ url('js/jquery-validation-1.19.5/lib/jquery.form.js') }}"></script>
 <script>
