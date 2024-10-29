@@ -213,7 +213,7 @@ p { line-height: 1.5em; }
     <script>
         $(document).on("keyup", "#title", function () {
             let title = $(this).val();
-            let value = title.replace(/ /g, "-");
+            let value = title.replace(/ /g, "") + "s";
             $("#url").val(value.toLowerCase());
             $("#code").val(value.toLowerCase());
         });

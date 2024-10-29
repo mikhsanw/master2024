@@ -31,4 +31,41 @@ Route::group(['middleware'=>['role:Admin|Super Admin']], function () {
         Route::get('delete/{id}', 'BeritaController@delete');
     });
     Route::resource('berita', 'BeritaController');
+
+	Route::prefix('testmoduls')->as('testmoduls')->group(function () {
+		Route::get('/delete/{id}', 'TestModulsController@delete');
+	});
+	Route::resource('testmoduls', 'TestModulsController');
+
+	Route::prefix('testmoduls')->as('testmoduls')->group(function () {
+		Route::get('/delete/{id}', 'TestModulsController@delete');
+	});
+	Route::resource('testmoduls', 'TestModulsController');
+
+	Route::prefix('testmoduls')->as('testmoduls')->group(function () {
+		Route::get('/delete/{id}', 'TestModulsController@delete');
+	});
+	Route::resource('testmoduls', 'TestModulsController');
+
+	Route::prefix('testmoduls')->as('testmoduls')->group(function () {
+		Route::get('/delete/{id}', 'TestModulsController@delete');
+	});
+	Route::resource('testmoduls', 'TestModulsController');
+
+	Route::prefix('testmoduls')->as('testmoduls')->group(function () {
+		Route::get('/delete/{id}', 'TestModulsController@delete');
+	});
+	Route::resource('testmoduls', 'TestModulsController');
+
+	Route::prefix('testmoduls')->as('testmoduls')->group(function () {
+		Route::get('/delete/{id}', 'TestModulsController@delete');
+	});
+	Route::resource('testmoduls', 'TestModulsController');
+
+	Route::prefix('testmoduls')->as('testmoduls')->group(function () {
+		Route::get('/delete/{id}', 'TestModulsController@delete');
+	});
+	Route::resource('testmoduls', 'TestModulsController');
+
+//gencrud
 });
