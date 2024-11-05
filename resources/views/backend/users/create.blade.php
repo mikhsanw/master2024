@@ -1,6 +1,7 @@
-@extends('layouts.backend._default')
-@push('title','Tambah data '.$page->title)
-@section('content')
+<x-app-layout>
+    <x-slot name="title">
+        {{ __($page->title) }}
+    </x-slot>
 <div id="kt_app_content" class="app-content flex-column-fluid">
     <div id="kt_app_content_container" class="app-container container-xxl">
         <div class="card card-flush py-4">
@@ -35,22 +36,21 @@
                         <label for="roles" class=" form-label">Roles</label>
                             <select class="form-select" multiple aria-label="Roles" id="roles" name="roles[]">
                                 @forelse ($roles as $role)
-
-                                    @if ($role!='Super Admin')
+                                    @if ($role != 'Super Admin')
                                         <option value="{{ $role }}" {{ in_array($role, old('roles') ?? []) ? 'selected' : '' }}>
-                                        {{ $role }}
+                                            {{ $role }}
                                         </option>
                                     @else
-                                        @if (Auth::user()->hasRole('Super Admin'))   
+                                        @if (Auth::user()->hasRole('Super Admin'))
                                             <option value="{{ $role }}" {{ in_array($role, old('roles') ?? []) ? 'selected' : '' }}>
-                                            {{ $role }}
+                                                {{ $role }}
                                             </option>
                                         @endif
                                     @endif
-
                                 @empty
-
+                                    <option disabled>No roles available</option>
                                 @endforelse
+
                             </select>
                     </div>
                     
@@ -67,9 +67,7 @@
         </div>
     </div>
 </div>
-
-</x-app-layout>
-@push('js')
+@prepend('js')
 <script src="{{ url('js/jquery-validation-1.19.5/lib/jquery.form.js') }}"></script>
 <script>
 $(document).ready(function () {
@@ -190,4 +188,5 @@ $(document).ready(function () {
 
 });
 </script>
-@endpush
+@endprepend
+</x-app-layout>
