@@ -59,7 +59,7 @@ class BeritaController extends Controller
                     [
                         'alias' => 'gambar',
                         'data' => [
-                            'name' => $file->getClientOriginalName(), 'disk' => config('filesystems.default'),
+                            'name' => $file->hashName(), 'disk' => config('filesystems.default'),
                             'target' => Storage::disk(config('filesystems.default'))->putFile($this->code . '/' . date('Y') . '/' . date('m') . '/' . date('d'), $file),
                         ],
                     ]

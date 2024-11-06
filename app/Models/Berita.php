@@ -25,8 +25,15 @@ class Berita extends Model
     public static function boot()
     {
         parent::boot();
-        self::creating(function($model){
-            $model->slug = Str::slug($model->judul, '-');
+
+        self::creating(function ($model) {
+            $judulSlug = Str::slug($model->judul, '-');
+            $cek = self::where('slug', $judulSlug)->first();
+            if ($cek) {
+                $judulSlug .= '-' . date('d-m-Y');
+            }
+            $model->slug = $judulSlug;
         });
     }
+
 }
