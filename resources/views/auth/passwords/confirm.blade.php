@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-auth-layout>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -46,4 +46,4 @@
     </div>
 </div>
 
-</x-app-layout>
+</x-auth-layout>

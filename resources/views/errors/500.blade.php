@@ -51,4 +51,4 @@
 
 
 
-</x-app-layout>
+@endsection

@@ -11,12 +11,12 @@
             <!--begin::Aside-->
             <div class="d-flex flex-center flex-lg-start flex-column">
                 <!--begin::Logo-->
-                <a href="index.html" class="mb-7">
+                <a href="{{url('/')}}" class="mb-7">
                     <img alt="Logo" src="{{asset('assets/media/logos/custom-3.svg')}}" />
                 </a>
                 <!--end::Logo-->
                 <!--begin::Title-->
-                <h2 class="text-white fw-normal m-0">Welcome to Main Master</h2>
+                <h2 class="text-white fw-normal m-0">Welcome to {{ config('master.app.profile.name') }}</h2>
                 <!--end::Title-->
             </div>
             <!--begin::Aside-->
@@ -71,7 +71,7 @@
                         <div class="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
                             <div></div>
                             <!--begin::Link-->
-                            <a href="authentication/layouts/creative/reset-password.html" class="link-primary">Forgot Password ?</a>
+                            {{-- <a href="authentication/layouts/creative/reset-password.html" class="link-primary">Forgot Password ?</a> --}}
                             <!--end::Link-->
                         </div>
                         <!--end::Wrapper-->
@@ -88,15 +88,17 @@
                             </button>
                             
                             @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
+                                <a class="btn link-primary" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             @endif
                         </div>
                         <!--end::Submit button-->
                         <!--begin::Sign up-->
-                        <div class="text-gray-500 text-center fw-semibold fs-6">Not a Member yet? 
-                        <a href="{{url('register')}}" class="link-primary">Sign up</a></div>
+                        @if (Route::has('register'))
+                            <div class="text-gray-500 text-center fw-semibold fs-6">Not a Member yet? 
+                            <a href="{{url('register')}}" class="link-primary">Sign up</a></div>
+                        @endif
                         <!--end::Sign up-->
                     </form>
                     <!--end::Form-->
@@ -105,7 +107,7 @@
                 <!--begin::Footer-->
                 <div class="d-flex flex-stack px-lg-10">
                     <!--begin::Languages-->
-                    <div class="me-0">
+                    {{-- <div class="me-0">
                         <!--begin::Toggle-->
                         <button class="btn btn-flex btn-link btn-color-gray-700 btn-active-color-primary rotate fs-base" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-offset="0px, 0px">
                             <img data-kt-element="current-lang-flag" class="w-20px h-20px rounded me-3" src="{{asset('assets/media/flags/united-states.svg')}}" alt="" />
@@ -167,14 +169,14 @@
                             <!--end::Menu item-->
                         </div>
                         <!--end::Menu-->
-                    </div>
+                    </div> --}}
                     <!--end::Languages-->
                     <!--begin::Links-->
-                    <div class="d-flex fw-semibold text-primary fs-base gap-5">
+                    {{-- <div class="d-flex fw-semibold text-primary fs-base gap-5">
                         <a href="pages/team.html" target="_blank">Terms</a>
                         <a href="pages/pricing/column.html" target="_blank">Plans</a>
                         <a href="pages/contact.html" target="_blank">Contact Us</a>
-                    </div>
+                    </div> --}}
                     <!--end::Links-->
                 </div>
                 <!--end::Footer-->

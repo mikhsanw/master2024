@@ -1,6 +1,7 @@
 <x-auth-layout>
 
-<div class="container">
+<div class="d-flex flex-column flex-root" id="kt_app_root">
+    <style>body { background-image: url('assets/media/auth/bg4.jpg'); } [data-bs-theme="dark"] body { background-image: url('assets/media/auth/bg4-dark.jpg') }</style>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

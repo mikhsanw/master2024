@@ -48,4 +48,4 @@
 </div>
 <!--end::Card-->
 
-</x-app-layout>
+@endsection
